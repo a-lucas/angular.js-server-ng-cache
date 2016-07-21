@@ -8,7 +8,7 @@ This considerably speed up the AngularJS initial website page load time.
 
 #Usage: 
 
-`bower install angular.js-server-ng-cache`
+`bower install angular.js-server-cache`
 
 or
 
@@ -16,10 +16,10 @@ or
 
 Then include the file: 
 
-`dist/angular.js-server-ng-cache.min.js` into your HTML, and include the module `angular.js-server-ng-cache`
+`dist/angular.js-server-ng-cache.min.js` into your HTML, and include the module `server-cache`
 
 ```
 
-angular.module('yourApp', [ your dependencies..., `angular.js-server-ng-cache']);
+angular.module('yourApp', [ your dependencies..., 'server-cache']);
 
 ```
