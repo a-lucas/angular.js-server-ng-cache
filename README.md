@@ -9,12 +9,12 @@ This considerably speeds up the AngularJS initial website page load time.
 
 #Workflow
 
-1- The browser vist the url `http://domain:port/url`
-2- Your node sever with `angular.js-server`  receives the request , and pre-render the HTML.
-3- If the server detects the presence of `angular.js-server-cache`, it will store all the template and ajax calls made during prerender inside the HTML
-4- The Browser receives the generated HTML response
-5- `server-cache` module will check if any caching data is available, and will load & use them to render the web app in the client.
-6- Once the Angular app is fully loaded, the caching strategy will be set to `serverCacheConfig.defaultCache` value (Default - false)
+1. The browser vist the url `http://domain:port/url`
+2. Your node sever with `angular.js-server`  receives the request , and pre-render the HTML.
+3. If the server detects the presence of `angular.js-server-cache`, it will store all the template and ajax calls made during prerender inside the HTML
+4. The Browser receives the generated HTML response
+5. `server-cache` module will check if any caching data is available, and will load & use them to render the web app in the client.
+6.  Once the Angular app is fully loaded, the caching strategy will be set to `serverCacheConfig.defaultCache` value (Default - false)
 
 #Usage: 
 
@@ -45,3 +45,34 @@ angular.module('yourApp', [ your dependencies..., 'server-cache']);
 angular.module('server-cache').constant('serverCacheConfig', {defaultConfig: true});
 
 ```
+
+
+# A new cacheFactoryProvider
+
+This file is a modified version of the original AngularJS 1.5 cacheFactoryProvider, and adds several methods to the cache factory.
+
+No code change, just new methods.
+
+##$cacheFactoryProvider.export (cacheId)
+
+Export the secified cache into JSON
+
+##$cacheFactoryProvider.exportAll()
+
+Exports all the caches
+
+##$cacheFactoryProvider.importAll(cacheData)
+
+Import the data exported trough the method `exportAll`
+
+##$cacheFactoryProvider.import(cacheId) 
+
+Specifically import a cache
+
+##$cacheFactoryProvider.info(cacheId)
+
+Get info about a cache
+
+##$cacheFactoryProvider.infoAll()
+
+Get info about all caches

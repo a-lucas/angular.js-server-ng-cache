@@ -1,5 +1,5 @@
 /*
- angular.js-server-ng-cache v0.2.2
+ angular.js-server-ng-cache v0.2.3
  https://github.com/a-lucas/angular.js-server-ng-cache#readme
 */
 
