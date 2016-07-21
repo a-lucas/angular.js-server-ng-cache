@@ -1,5 +1,5 @@
 /*
- angular.js-server-ng-cache v0.1.0
+ angular.js-server-ng-cache v0.2.2
  https://github.com/a-lucas/angular.js-server-ng-cache#readme
 */
 
@@ -63,7 +63,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _ngCacheFactory = __webpack_require__(1);
 	
-	angular.module('server-cache', []).provider('$cacheFactory', _ngCacheFactory.$CacheFactoryProvider).provider('$templateCache', _ngCacheFactory.$TemplateCacheProvider).config(function ($windowProvider, $httpProvider, $cacheFactoryProvider) {
+	angular.module('server-cache', []).provider('$cacheFactory', _ngCacheFactory.$CacheFactoryProvider).provider('$templateCache', _ngCacheFactory.$TemplateCacheProvider).constant('serverCacheConfig', { defaultCache: true }).config(function ($windowProvider, $httpProvider, $cacheFactoryProvider, serverCacheConfig) {
 	
 	    $httpProvider.defaults.cache = true;
 	
@@ -79,7 +79,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	        $window.addEventListener('StackQueueEmpty', function () {
 	            $cacheFactoryProvider.remove('$http');
-	            $httpProvider.defaults.cache = config.defaultCache;
+	            $httpProvider.defaults.cache = serverCacheConfig.defaultCache;
 	        });
 	    }
 	});
