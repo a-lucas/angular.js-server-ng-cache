@@ -1,7 +1,7 @@
 import { $CacheFactoryProvider, $TemplateCacheProvider } from './provider/ngCacheFactory';
 
 
-angular.module('angular.js-server-ngCache', [])
+angular.module('server-cache', [])
     .provider('$cacheFactory', $CacheFactoryProvider)
     .provider('$templateCache', $TemplateCacheProvider)
     .config(function($windowProvider, $httpProvider, $cacheFactoryProvider) {

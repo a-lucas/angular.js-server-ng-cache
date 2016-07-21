@@ -1,5 +1,5 @@
 /*
- angular.js-server-ng-cache v0.0.1
+ angular.js-server-ng-cache v0.1.0
  https://github.com/a-lucas/angular.js-server-ng-cache#readme
 */
 
@@ -63,7 +63,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	
 	var _ngCacheFactory = __webpack_require__(1);
 	
-	angular.module('angular.js-server-ngCache', []).provider('$cacheFactory', _ngCacheFactory.$CacheFactoryProvider).provider('$templateCache', _ngCacheFactory.$TemplateCacheProvider).config(function ($windowProvider, $httpProvider, $cacheFactoryProvider) {
+	angular.module('server-cache', []).provider('$cacheFactory', _ngCacheFactory.$CacheFactoryProvider).provider('$templateCache', _ngCacheFactory.$TemplateCacheProvider).config(function ($windowProvider, $httpProvider, $cacheFactoryProvider) {
 	
 	    $httpProvider.defaults.cache = true;
 	

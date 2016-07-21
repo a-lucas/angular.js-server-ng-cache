@@ -1,7 +1,7 @@
 {
   "name": "angular.js-server-ng-cache",
   "description": "A REST API and template caching for server side rendering with  angular.js-server",
-  "main": "dist/angular.js-server-ng-cache.min.js",
+  "main": "dist/angular.js-server-ng-cache.js",
   "authors": [
     "Antoine LUCAS"
   ],
@@ -17,8 +17,6 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "src"
   ]
 }
