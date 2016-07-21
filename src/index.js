@@ -4,7 +4,8 @@ import { $CacheFactoryProvider, $TemplateCacheProvider } from './provider/ngCach
 angular.module('server-cache', [])
     .provider('$cacheFactory', $CacheFactoryProvider)
     .provider('$templateCache', $TemplateCacheProvider)
-    .config(function($windowProvider, $httpProvider, $cacheFactoryProvider) {
+    .constant('serverCacheConfig', {defaultCache: true})
+    .config(function($windowProvider, $httpProvider, $cacheFactoryProvider, serverCacheConfig) {
 
         $httpProvider.defaults.cache = true;
 
@@ -20,7 +21,7 @@ angular.module('server-cache', [])
 
             $window.addEventListener('StackQueueEmpty', function() {
                 $cacheFactoryProvider.remove('$http');
-                $httpProvider.defaults.cache = config.defaultCache;
+                $httpProvider.defaults.cache = serverCacheConfig.defaultCache;
             });
         }
     });
